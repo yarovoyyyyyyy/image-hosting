@@ -4,24 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои картинки</title>
+    <!-- Подключаем стили Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
     <style>
         body { background: #1a1a2e; font-family: Arial, sans-serif; padding: 20px; }
-        h1 { color: #fff; text-align: center; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
-        .gallery img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.5); }
+        h1 { color: #fff; text-align: center; margin-bottom: 30px; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .gallery a {
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery a:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #000; /* фон на случай прозрачности */
+        }
+        /* Стиль для подписей в Lightbox (по желанию) */
+        .lb-data .lb-caption {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <h1>📸 Моя галерея</h1>
     <div class="gallery">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/C-FPoURoXxwx5IFVuUolPSPRXkb7OS0w-jDrRfrA1EUFm9kuTPoDjwM_moZBHp0JCRDb_-8mfDqD8dk4ejHQCaUS.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/Sqkx5RDPhzhkml9P1jIJmIs2G282Sks78mU1kTCHr4dMyc22cvVkCpy2ZG3kCRJ8gviPRhiz9ZG-JkFSmdfpEUJP.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/Wpngueiz_71aJh8oCUICo0xSyR7E0rDXokeu1DUh5sTEwdSIBmEmEd46pqmWELAqbvvEfdCP0gDzDkcArPou3R0g.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/e-AyvbZdDipT9DM-PvRgi9IeMXyLkeUB8SDrXXFkRJoTNmyOZLRNHTOjJV6a_iWKSqWyGr0nOeAfLfF3UO3bMXZ-.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/e1MKLpmapqBFV4netlIzynIbLX9IL9v4k5_rQaFgwgUDUfSDJ6UBq3w8GmLZNbsFgEBAEbP7s8Zpo5mzyZux2JOn.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/mhpdf7V5K6XKRwzxPfVUNdfZdpi270EbbIzFxXHeFdKZNEXaW6QLfFuUO3BnlAWix1C30opeKhiZwLW0M_QeUgK8.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/po7oLQl75R0DQ2uX8jC-E_b1Rj3HAB0hGw3ptolCq8uDyVRj61J9U0AI2b-eMUDbyVQUBF-Ws1ni2a8_bi3heXXR.jpg" alt="image">
-        <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/rfj_QMu1KQEmU3vUuUF00PVimTgkOQGtRx-FPW1eOSMjU8pnaYFnlODymtXZ1iLKOXEMRncGv-Gq8i7gWbIl2YXE.jpg" alt="image">
+
+        <!-- Картинка 1 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/C-FPoURoXxwx5IFVuUolPSPRXkb7OS0w-jDrRfrA1EUFm9kuTPoDjwM_moZBHp0JCRDb_-8mfDqD8dk4ejHQCaUS.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 1">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/C-FPoURoXxwx5IFVuUolPSPRXkb7OS0w-jDrRfrA1EUFm9kuTPoDjwM_moZBHp0JCRDb_-8mfDqD8dk4ejHQCaUS.jpg" alt="Картинка 1">
+        </a>
+
+        <!-- Картинка 2 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/Sqkx5RDPhzhkml9P1jIJmIs2G282Sks78mU1kTCHr4dMyc22cvVkCpy2ZG3kCRJ8gviPRhiz9ZG-JkFSmdfpEUJP.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 2">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/Sqkx5RDPhzhkml9P1jIJmIs2G282Sks78mU1kTCHr4dMyc22cvVkCpy2ZG3kCRJ8gviPRhiz9ZG-JkFSmdfpEUJP.jpg" alt="Картинка 2">
+        </a>
+
+        <!-- Картинка 3 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/Wpngueiz_71aJh8oCUICo0xSyR7E0rDXokeu1DUh5sTEwdSIBmEmEd46pqmWELAqbvvEfdCP0gDzDkcArPou3R0g.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 3">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/Wpngueiz_71aJh8oCUICo0xSyR7E0rDXokeu1DUh5sTEwdSIBmEmEd46pqmWELAqbvvEfdCP0gDzDkcArPou3R0g.jpg" alt="Картинка 3">
+        </a>
+
+        <!-- Картинка 4 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/e-AyvbZdDipT9DM-PvRgi9IeMXyLkeUB8SDrXXFkRJoTNmyOZLRNHTOjJV6a_iWKSqWyGr0nOeAfLfF3UO3bMXZ-.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 4">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/e-AyvbZdDipT9DM-PvRgi9IeMXyLkeUB8SDrXXFkRJoTNmyOZLRNHTOjJV6a_iWKSqWyGr0nOeAfLfF3UO3bMXZ-.jpg" alt="Картинка 4">
+        </a>
+
+        <!-- Картинка 5 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/e1MKLpmapqBFV4netlIzynIbLX9IL9v4k5_rQaFgwgUDUfSDJ6UBq3w8GmLZNbsFgEBAEbP7s8Zpo5mzyZux2JOn.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 5">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/e1MKLpmapqBFV4netlIzynIbLX9IL9v4k5_rQaFgwgUDUfSDJ6UBq3w8GmLZNbsFgEBAEbP7s8Zpo5mzyZux2JOn.jpg" alt="Картинка 5">
+        </a>
+
+        <!-- Картинка 6 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/mhpdf7V5K6XKRwzxPfVUNdfZdpi270EbbIzFxXHeFdKZNEXaW6QLfFuUO3BnlAWix1C30opeKhiZwLW0M_QeUgK8.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 6">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/mhpdf7V5K6XKRwzxPfVUNdfZdpi270EbbIzFxXHeFdKZNEXaW6QLfFuUO3BnlAWix1C30opeKhiZwLW0M_QeUgK8.jpg" alt="Картинка 6">
+        </a>
+
+        <!-- Картинка 7 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/po7oLQl75R0DQ2uX8jC-E_b1Rj3HAB0hGw3ptolCq8uDyVRj61J9U0AI2b-eMUDbyVQUBF-Ws1ni2a8_bi3heXXR.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 7">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/po7oLQl75R0DQ2uX8jC-E_b1Rj3HAB0hGw3ptolCq8uDyVRj61J9U0AI2b-eMUDbyVQUBF-Ws1ni2a8_bi3heXXR.jpg" alt="Картинка 7">
+        </a>
+
+        <!-- Картинка 8 -->
+        <a href="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/rfj_QMu1KQEmU3vUuUF00PVimTgkOQGtRx-FPW1eOSMjU8pnaYFnlODymtXZ1iLKOXEMRncGv-Gq8i7gWbIl2YXE.jpg"
+           data-lightbox="gallery"
+           data-title="Картинка 8">
+            <img src="https://cdn.jsdelivr.net/gh/yarovoyyyyyyy/image-hosting@main/rfj_QMu1KQEmU3vUuUF00PVimTgkOQGtRx-FPW1eOSMjU8pnaYFnlODymtXZ1iLKOXEMRncGv-Gq8i7gWbIl2YXE.jpg" alt="Картинка 8">
+        </a>
+
     </div>
+
+    <!-- Подключаем скрипт Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
